@@ -1,0 +1,112 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Contact CSS
+----------------------------------------*/
+
+.contact-content{
+    @include flex-vertical-center;
+    align-items: baseline;
+    height: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+    .mail-box{
+        margin-top: 30px;
+        span{
+            display: block;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        a{
+            color: var(--cp-color-heading-primary);
+            font-size: 24px;
+            font-weight: 500;
+            &:hover{
+                color: var(--cp-color-theme-primary);
+            }
+        }
+    }
+}
+
+.contact-form{
+    background-color: #F1EEE9;
+    padding: 40px;
+    border-radius: 14px;
+    .form-header{
+        font-size: 36px;
+        font-weight: 500;
+        margin-bottom: 40px;
+    }
+    .form-group{
+        margin-bottom: 24px;
+    }
+    .form-item{
+        .form-title{
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .form-control{
+            color: #4D4D4D;
+            box-shadow: none;
+            border: none;
+            outline: none;
+            border-radius: 8px;
+            padding: 16px 0;
+            padding-left: 25px;
+            padding-right: 30px;
+            overflow: hidden;
+            @include tp-placeholder{
+                color: #4D4D4D;
+                font-size: 16px;
+            }
+        }
+        .nice-select{
+            width: 100%;
+            height: auto;
+            line-height: inherit;
+            padding: 15.5px 30px;
+            padding-left: 0;
+            border: none;
+            outline: none;
+            &:after{
+                top: 46%;
+                width: 10px;
+                height: 10px;
+                border-color: #adadad;
+                border-bottom: 2px solid #adadad;
+                border-right: 2px solid #adadad;
+                right: 35px;
+            }
+            span{
+                font-size: 16px;
+                color: #4D4D4D;
+                box-shadow: none;
+                border: none;
+                outline: none;
+                border-radius: 8px;
+                padding: 16px 0;
+                padding-left: 25px;
+                padding-right: 30px;
+                overflow: hidden;
+            }
+            .list{
+                li{
+                    font-size: 16px;
+                    padding: 5px 20px;
+                    &:not(:last-of-type){
+                        border-bottom: 1px dashed #adadad;
+                    }
+                }
+            }
+        }
+    }
+    .cp-primary-btn{
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* !END: Contact CSS */

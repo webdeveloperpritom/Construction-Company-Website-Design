@@ -1,0 +1,24 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Sponsor CSS
+----------------------------------------*/
+
+.sponsor-wrap{
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border-top: 1px solid #F1EEE9;
+    .sponsor-title{
+        font-family: var(--cp-ff-heading-2);
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        line-height: 1.5;
+        @include breakpoint(md){
+            margin-bottom: 40px;
+        }
+    }
+}
+
+/* !END: Sponsor CSS */

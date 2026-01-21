@@ -1,0 +1,63 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Core CSS
+----------------------------------------*/
+
+.core-section{
+    background-color: var(--cp-color-heading-primary);
+    position: relative;
+    z-index: 1;
+    .core-bg{
+        @include background;
+        width: 45%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include breakpoint(md){
+            width: 0;
+        }
+    }
+}
+
+.core-item-wrap{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    @include breakpoint(sm){
+        grid-template-columns: 1fr;
+    }
+    .core-item{
+        .icon{
+            height: 50px;
+            width: 50px;
+            @include flex-center;
+            border-radius: 50%;
+            border: 1px solid #4d4d4d;
+            margin-bottom: 30px;
+        }
+        .title{
+            font-family: var(--cp-ff-heading-2);
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            @include breakpoint(xl){
+                font-size: 22px;
+            }
+        }
+        p{
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 0;
+            @include breakpoint(xl){
+                br{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/* !END: Core CSS */

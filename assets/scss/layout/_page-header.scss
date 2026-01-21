@@ -1,0 +1,126 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Page Header CSS
+----------------------------------------*/
+.page-header{
+    background-color: #191919;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .page-header-content{
+        padding: 220px 0 120px 0;
+        position: relative;
+        z-index: 2;
+        @include breakpoint(md){
+            padding: 180px 0 100px 0;
+        }
+        .section-heading{
+            .section-title{
+                color: var(--cp-color-common-white);
+                font-size: 80px;
+                font-weight: 500;
+                text-transform: inherit;
+                @include breakpoint(md) {
+                    font-size: 42px;
+                    max-width: 100%;
+                    br{
+                        display: none;
+                    }
+                }
+                @include breakpoint(sm) {
+                    font-size: 36px;
+                    br{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .page-header-bottom{
+            @include flex-vertical-center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1378px;
+            column-gap: 20px;
+            flex-wrap: wrap;
+            row-gap: 30px;
+            margin-top: 80px;
+            p{
+                color: #F1EEE9;
+                font-size: 22px;
+                font-weight: 400;
+                margin-bottom: 0;
+                line-height: 1.4;
+            }
+            .page-header-list{
+                max-width: 570px;
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 10px;
+                list-style: none;
+                @include breakpoint(sm){
+                    grid-template-columns: 1fr;
+                }
+                li{
+                    color: var(--cp-color-common-white);
+                    font-size: 18px;
+                    font-weight: 500;
+                    @include flex-vertical-center;
+                    column-gap: 10px;
+                }
+            }
+        }
+        .page-header-meta{
+            @include flex-vertical-center;
+            margin-top: 55px;
+            @include breakpoint(md){
+                flex-wrap: wrap;
+                column-gap: 50px;
+            }
+            @include breakpoint(sm){
+                flex-direction: column;
+                row-gap: 30px;
+                justify-content: baseline;
+                align-items: baseline;
+            }
+            .meta-item{
+                &:not(:last-of-type){
+                    margin-right: 145px;
+                    padding-right: 145px;
+                    border-right: 1px solid #adadad;
+                    @include breakpoint(xxl){
+                        padding-right: 100px;
+                        margin-right: 100px;
+                    }
+                    @include breakpoint(xl){
+                        padding-right: 50px;
+                        margin-right: 50px;
+                    }
+                    @include breakpoint(md){
+                        border: none;
+                        margin-right: 0;
+                        padding-right: 0;
+                    }
+                }
+                span{
+                    color: #adadad;
+                    font-size: 16px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    display: block;
+                    margin-bottom: 10px;
+                    opacity: 0.85;
+                }
+                .title{
+                    color: var(--cp-color-common-white);
+                    font-size: 20px;
+                    font-weight: 500;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/* !END: Page Header CSS */

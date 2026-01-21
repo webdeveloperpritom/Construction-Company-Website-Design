@@ -1,0 +1,60 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Award CSS
+----------------------------------------*/
+
+.award-img{
+    max-width: 500px;
+    width: 100%;
+    height: 488px;
+    @include breakpoint(md){
+        margin-bottom: 40px;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.award-list{
+    .award-list-item{
+        @include flex-vertical-center;
+        justify-content: space-between;
+        column-gap: 20px;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        width: 100%;
+        padding: 31.5px 24px;
+        border-bottom: 1px solid rgba(25, 25, 25, 0.2);
+        @include transition(all 0.3s ease-in-out);
+        &:nth-child(1){
+            border-top: 1px solid rgba(25, 25, 25, 0.2);
+        }
+        span{
+            font-family: var(--cp-ff-heading);
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1;
+            @include transition(all 0.3s ease-in-out);
+        }
+        .title{
+            color: var(--cp-color-heading-primary);
+            font-size: 24px;
+            font-weight: 500;
+            @include transition(all 0.3s ease-in-out);
+        }
+        &:hover{
+            background-color: var(--cp-color-heading-primary);
+            span{
+                color: #ADADAD;
+            }
+            .title{
+                color: var(--cp-color-common-white);
+            }
+        }
+    }
+}
+
+/* !END: Award CSS */

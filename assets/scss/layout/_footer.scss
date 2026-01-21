@@ -1,0 +1,486 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Footer CSS
+----------------------------------------*/
+.footer-section {
+    background-color: #0F0F0F;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-cta{
+    position: relative;
+    z-index: 1;
+    .footer-bg{
+        @include background;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;  
+        filter: saturate(0);
+        .overlay{
+            background-color: #0F0F0F;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+        }
+    }
+    .cta-content{
+        padding: 80px 0;
+        .title{
+            color: var(--cp-color-common-white);
+            font-size: 48px;
+            font-weight: 500;
+            margin-bottom: 0;
+            margin-bottom: 30px;
+        }
+        .cp-primary-btn{
+            background-color: var(--cp-color-common-white);
+            color: var(--cp-color-heading-primary);
+            &:hover{
+                color: var(--cp-color-common-white);
+            }
+            &:before{
+                background-color: var(--cp-color-theme-primary);
+            }
+        }
+    }
+}
+
+.footer-wrap{
+    padding: 100px 0;
+    @include breakpoint(md){
+        padding: 80px 0 0 0;
+    }
+}
+
+.footer-wrap-3{
+    padding: 100px 0;
+    position: relative;
+    @include breakpoint(md){
+        padding: 80px 0 0 0;
+    }
+    &:before{
+        background-color: #4D4D4D;
+        content: "";
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 46%;
+        @include breakpoint(xl){
+            left: 47%;
+        }
+        @include breakpoint(lg){
+            left: 40%;
+        }
+        @include breakpoint(md){
+            display: none;
+        }
+    }
+}
+
+.footer-widget {
+    @include breakpoint(md) {
+        margin-bottom: 80px;
+    }
+    @include breakpoint(sm){
+        margin-bottom: 50px;
+    }
+    .widget-header {
+        margin-bottom: 30px;
+        .footer-logo{
+            max-width: 170px;
+        }
+        .widget-title{
+            color: var(--cp-color-common-white);
+            font-size: 24px;
+            font-weight: 500;
+            position: relative;
+        }
+    }
+    p{
+        color: #D0D0D0;
+        font-size: 20px;
+    }
+    .title{
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 0;
+        margin-top: 30px;
+        text-transform: uppercase;
+        span{
+            color: var(--cp-color-text-body);
+            display: block;
+            margin-top: 10px;
+            text-transform: inherit;
+            font-weight: 400;
+        }
+    }
+    .footer-list {
+        list-style: none;
+        li {
+            color: #ADADAD;
+            a {
+                font-family: var(--cp-ff-body);
+                color: #ADADAD;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 1;
+                &:hover {
+                    color: var(--cp-color-theme-primary);
+                }
+            }
+            &:not(:last-of-type) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .footer-form{
+        position: relative;
+        margin-top: 30px;
+        .form-control{
+            background-color: #21354D;
+            padding: 15px 64px 15px 25px;
+            color: #D9E4E3;
+            box-shadow: none;
+            border: none;
+            border-radius: 100px;
+                @include tp-placeholder{
+                    color: #D9E4E3;
+            }
+        }
+        .submit{
+            background-color: var(--cp-color-theme-primary);
+            color: var(--cp-color-text-black);
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            height: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 50%;
+            height: 48px;
+            width: 48px;
+            @include flex-center;
+
+        }
+    }
+    .address-list {
+        list-style: none;
+        margin-bottom: 30px;
+        li {
+            font-family: var(--cp-ff-body);
+            font-size: 16px;
+            color: #ADADAD;
+            display: flex;
+            column-gap: 10px;
+            &:not(:last-of-type) {
+                margin-bottom: 15px;
+            }
+            i {
+                color: var(--cp-color-theme-primary);
+                line-height: 1;
+                margin-top: 6px;
+            }
+            a {
+                border-bottom: 1px solid transparent;
+                &:hover {
+                    color: var(--cp-color-theme-primary);
+                    border-bottom: 1px solid var(--cp-color-theme-primary)
+                }
+            }
+        }
+    }
+    .social-list {
+        @include flex-vertical-center;
+        list-style: none;
+        li {
+            a {
+                background-color: transparent;
+                color: var(--cp-color-common-white);
+                font-size: 14px;
+                height: 44px;
+                width: 44px;
+                border-radius: 50%;
+                display: block;
+                @include flex-center;
+                border: 1px solid #3A3A3A;
+                &:hover {
+                    background-color: var(--cp-color-theme-primary);
+                    color: var(--cp-color-common-white);
+                    border-color: var(--cp-color-theme-primary);
+                }
+            }
+            &:not(:last-of-type) {
+                margin-right: 8px;
+            }
+        }
+    }
+    .form-check{
+        margin-top: 30px;
+        .form-check-input{
+            background-color: var(--cp-color-border-1);
+            border: none;
+            box-shadow: none;
+            height: 17px;
+            width: 17px;
+            &:checked[type=checkbox]{
+                box-shadow: none;
+            }
+        }
+        .form-check-label{
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+        }
+    }
+    &.footer-col-2{
+        padding-left: 70px;
+        @include breakpoint(md){
+            padding-left: 0;
+        }
+        .footer-list{
+            li{
+                a{
+                    position: relative;
+                    &:before{
+                        background-image: none;
+                        font-family: "Font Awesome 6 Pro";
+                        font-size: 14px;
+                        font-weight: 700;
+                        content: "\f054";
+                        color: var(--cp-color-text-body);
+                        position: absolute;
+                        top: 55%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        transition: all 0.3s ease-in-out;
+                        cursor: pointer;
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+                    &:hover{
+                        visibility: visible;
+                        opacity: 1;
+                        padding-left: 15px;
+                        &:before{
+                            color: var(--cp-color-theme-primary);
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.widget-3{
+        padding-left: 30px;
+        @include breakpoint(md){
+            padding-left: 0;
+        }
+    }
+}
+
+
+// Footer 2
+
+.footer-wrap-2{
+    padding: 120px 0 245px 0;
+    @include breakpoint(lg){
+        padding-bottom: 150px;
+    }
+    @include breakpoint(sm){
+        padding: 70px 0;
+    }
+    .footer-content{
+        @include flex-vertical-center;
+        align-items: end;
+        justify-content: space-between;
+        column-gap: 30px;
+        flex-wrap: wrap;
+        row-gap: 40px;
+        .footer-content-left{
+            .title{
+                font-family: var(--cp-ff-heading-2);
+                color: var(--cp-color-common-white);
+                font-size: 220px;
+                font-weight: 500;
+                line-height: 1;
+                margin-bottom: 30px;
+                @include breakpoint(sm){
+                    font-size: 80px;
+                }
+            }
+            p{
+                color: var(--cp-color-common-white);
+                font-size: 24px;
+                font-weight: 500;
+                margin-bottom: 0;
+                @include breakpoint(sm){
+                    font-size: 18px;
+                }
+            }
+        }
+        .footer-content-right{
+            .info-title{
+                font-family: var(--cp-ff-heading-2);
+                color: var(--cp-color-common-white);
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 1;
+                margin-bottom: 25px;
+                text-transform: uppercase;
+            }
+            p{
+                color: #ADADAD;
+                font-size: 22px;
+                font-weight: 500;
+                margin-bottom: 100px;
+            }
+            a{
+                color: var(--cp-color-common-white);
+                font-size: 22px;
+                font-weight: 500;
+                text-decoration: underline;
+                line-height: 1;
+                &:hover{
+                    color: var(--cp-color-theme-primary);
+                }
+            }
+        }
+    }
+}
+
+// Footer 3
+
+.footer-3{
+    .footer-widget{
+        .footer-title{
+            font-family: var(--cp-ff-heading-2);
+            color: var(--cp-color-common-white);
+            font-size: 110px;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 100px;
+            @include breakpoint(lg){
+                font-size: 70px;
+            }
+            @include breakpoint(md){
+                font-size: 50px;
+                margin-bottom: 30px;
+            }
+        }
+        .footer-btn{
+            .cp-primary-btn{
+                background-color: var(--cp-color-common-white);
+                color: var(--cp-color-heading-primary);
+                &:hover{
+                    color: var(--cp-color-common-white);
+                }
+                &:before{
+                    background-color: var(--cp-color-theme-primary);
+                }
+            }
+        }
+        .widget-header{
+            .widget-title{
+                font-family: var(--cp-ff-heading-2);
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.footer-widget .footer-right-desk {
+    font-family: var(--cp-ff-body);
+    color: #adadad;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.copyright-area{
+    border-top: 1px solid var(--cp-color-border-1);
+    padding: 30px 0;
+    @include breakpoint(md){
+        padding: 40px 0
+    }
+}
+
+.copyright-content {
+    align-items: center;
+    @include breakpoint(md) {
+        margin-top: 0;
+    }
+    @include breakpoint(sm) {
+        row-gap: 20px;
+    }
+    p {
+        color: #D0D0D0;
+        font-size: 16px;
+        font-family: var(--cp-ff-body);
+        margin: 0;
+        span {
+            color: var(--cp-color-theme-primary);
+        }
+        @include breakpoint(sm){
+            text-align: center;
+        }
+    }
+    .social-list {
+        @include flex-vertical-center;
+        justify-content: end;
+        list-style: none;
+        @include breakpoint(sm){
+            justify-content: center;
+        }
+        li {
+            a {
+                background-color: var(--cp-color-border-1);
+                color: var(--cp-color-common-white);
+                font-size: 13px;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                display: block;
+                @include flex-center;
+                &:hover {
+                    background-color: var(--cp-color-theme-primary);
+                    color: var(--cp-color-common-white);
+                }
+            }
+            &:not(:last-of-type) {
+                margin-right: 10px;
+            }
+        }
+    }
+    .copyright-list{
+        list-style: none;
+        @include flex-vertical-center;
+        column-gap: 20px;
+        justify-content: end;
+        @include breakpoint(sm){
+            justify-content: center;
+        }
+        a{
+            font-family: var(--cp-ff-body);
+            color: #D0D0D0;
+            font-size: 16px;
+            font-weight: 400;
+            &:hover{
+                color: var(--cp-color-theme-primary);
+            }
+        }
+    }
+}
+
+
+
+/* !END: Theme Footer CSS */

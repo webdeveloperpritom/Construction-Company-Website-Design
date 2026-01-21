@@ -1,0 +1,60 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: FAQ CSS
+----------------------------------------*/
+
+.faq-content{
+    .faq-accordion{
+        border-radius: 0;
+        .accordion-item{
+            background-color: var(--cp-color-common-white);
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            &:not(:last-of-type){
+                margin-bottom: 30px;
+            }
+            .accordion-button{
+                background-color: var(--cp-color-common-white);
+                color: var(--cp-color-heading-primary);
+                border: none;
+                box-shadow: none;
+                font-size: 24px;
+                font-weight: 600;
+                border-bottom: 1px solid rgba(20, 58, 43, .16);
+                padding: 0;
+                padding-bottom: 20px;
+                border-radius: 0;
+                &:after{
+                    color: var(--cp-color-heading-primary);
+                    background-image: none;
+                    font-family: "Font Awesome 6 Pro";
+                    font-size: 14px;
+                    font-weight: 700;
+                    content: "+";
+                    line-height: 1;
+                    @include flex-center;
+                    border-radius: 50%;
+                }
+                &:not(.collapsed){
+                    &:after{
+                        content: "-";
+                        transform: rotate(0);
+                    }
+                }
+            }
+            .accordion-body{
+                color: var(--cp-color-text-body);
+                max-width: 600px;
+                width: 100%;
+                font-size: 18px;
+                font-weight: 400;
+                padding: 0;
+                padding-top: 20px;
+            }
+        }
+    }
+}
+
+/* !END: FAQ CSS */
